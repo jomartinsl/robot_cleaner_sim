@@ -1,0 +1,36 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # H
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      
+    gripper_control:
+      type: forward_command_controller/ForwardCommandController
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - base_arm_joint
+      - link_1_joint
+      - link_2_joint
+      - link_3_joint
+      # ...
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity 
+
+
+gripper_control:
+  ros__parameters:
+    joints:
+      - left_finger_joint
+
+    interface_name: position
