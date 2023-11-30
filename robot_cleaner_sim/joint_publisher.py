@@ -27,6 +27,7 @@ class MinimalPublisher(Node):
 
         self.publisher_.publish(joint_traj_msg)
         self.get_logger().info('Publishing')
+        #random comment
 
 
 def main(args=None):
